@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejemplos de WAI-ARIA</title>
+</head>
+<body>
+  <h1 id="page-title">Formulario de Registro</h1>
+
+  <!-- Descripción del formulario -->
+  <p id="form-description">Por favor, complete los campos obligatorios marcados con un asterisco (*).</p>
+
+  <!-- Formulario -->
+  <form aria-labelledby="page-title" aria-describedby="form-description">
+    <!-- Campo de texto con descripción -->
+    <div>
+      <label for="username">Nombre de usuario *</label>
+      <input type="text" id="username" aria-required="true" aria-invalid="false" aria-describedby="username-desc"
+        placeholder="Ingrese su nombre de usuario">
+      <span id="username-desc">Debe contener entre 4 y 12 caracteres.</span>
+    </div>
+
+    <!-- Selector de género -->
+    <fieldset>
+      <legend>Género *</legend>
+      <div>
+        <label>
+          <input type="radio" name="gender" value="male" aria-required="true" aria-checked="false">
+          Masculino
+        </label>
+      </div>
+      <div>
+        <label>
+          <input type="radio" name="gender" value="female" aria-checked="false">
+          Femenino
+        </label>
+      </div>
+    </fieldset>
+
+    <!-- Lista de opciones con selección actual -->
+    <div>
+      <label for="role">Rol en la plataforma</label>
+      <select id="role" aria-current="true">
+        <option value="user">Usuario</option>
+        <option value="admin" aria-selected="true">Administrador</option>
+      </select>
+    </div>
+
+    <!-- Casilla de verificación -->
+    <div>
+      <label>
+        <input type="checkbox" id="terms" aria-required="true" aria-checked="false">
+        Acepto los términos y condiciones
+      </label>
+    </div>
+
+    <!-- Estado de carga -->
+    <div id="loading" aria-busy="false">
+      Procesando solicitud...
+    </div>
+
+    <!-- Botón de envío -->
+    <button type="submit" id="submitButton" aria-controls="loading">Enviar</button>
+  </form>
+
+  <!-- Menú desplegable -->
+  <nav>
+    <button id="menuButton" aria-haspopup="true" aria-expanded="false" aria-controls="menu">
+      Abrir Menú
+    </button>
+    <ul id="menu" role="menu" aria-hidden="true">
+      <li role="menuitem">Inicio</li>
+      <li role="menuitem" aria-current="page">Servicios</li>
+      <li role="menuitem">Contacto</li>
+    </ul>
+  </nav>
+
+  <!-- Contenido decorativo oculto -->
+  <div aria-hidden="true">
+    Este contenido es solo decorativo y no será leído por tecnologías de asistencia.
+  </div>
+
+
+  <input type="text" id="name" aria-describedby="name-description">
+  <p id="name-description">Por favor, ingrese su nombre completo.</p>
+</body>
+</html>
