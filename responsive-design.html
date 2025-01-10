@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejemplo Responsivo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      font-size: 1rem;
+    }
+
+    header {
+      background-color: #007BFF;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    nav li {
+      margin: 0.5rem;
+    }
+
+    nav a {
+      text-decoration: none;
+    }
+
+    main {
+      padding: 2rem;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    form input {
+      display: block;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    .form-group label {
+      display: block;
+      width: 50%;
+    }
+
+    .form-group input {
+      width: 50%;
+      max-width: 256px;
+    }
+    
+    :focus {
+      background-color: red;
+    }
+
+    .label-input {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .label-input label {
+      text-align: right;
+      width: 50%;
+    }
+
+    .input-message {
+      font-size: 11px;
+      display: block;
+      width: 50%;
+    }
+
+    /* Diseño responsivo */
+    @media (max-width: 600px) {
+      nav ul {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      main {
+        padding: 1rem;
+      }
+
+      .form-group input {
+        width: 100%;
+        max-width: 256px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Ejemplo de Diseño Responsivo</h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="#">Inicio</a></li>
+      <li><a href="#">Acerca de</a></li>
+      <li><a href="#">Servicios</a></li>
+      <li><a href="#">Contacto</a></li>
+    </ul>
+  </nav>
+  <main>
+    <p>Este diseño se adapta automáticamente a diferentes tamaños de pantalla, garantizando una experiencia inclusiva y
+      consistente.</p>
+    <!-- Formulario -->
+    <form aria-labelledby="page-title" aria-describedby="form-description">
+      <!-- Campo de texto con descripción -->
+      <div class="form-group">
+        <div class="label-input">
+          <label for="username">Nombre de usuario *</label>
+          <div class="input-message">
+            <input type="text" id="username" aria-required="true" aria-invalid="false" aria-describedby="username-desc"
+              placeholder="Ingrese su nombre de usuario">
+            <span id="username-desc" class="input-message">Debe contener entre 4 y 12 caracteres.</span>
+          </div>
+        </div>
+
+      </div>
+      <div class="form-group">
+        <div class="label-input">
+          <label for="username">Apellido paterno de usuario</label>
+          <div class="input-message">
+            <input type="text" id="username" aria-required="true" aria-invalid="false" aria-describedby="username-desc"
+              placeholder="Ingrese su nombre de usuario">
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="label-input">
+          <label for="username">Apellido materno de usuario</label>
+          <div class="input-message">
+            <input type="text" id="username" aria-required="true" aria-invalid="false" aria-describedby="username-desc"
+              placeholder="Ingrese su nombre de usuario">
+          </div>
+        </div>
+      </div>
+
+      <!-- Selector de género -->
+      <fieldset>
+        <legend>Género *</legend>
+        <div>
+          <label>
+            <input type="radio" name="gender" value="male" aria-required="true" aria-checked="false">
+            Masculino
+          </label>
+        </div>
+        <div>
+          <label>
+            <input type="radio" name="gender" value="female" aria-checked="false">
+            Femenino
+          </label>
+        </div>
+      </fieldset>
+
+      <!-- Lista de opciones con selección actual -->
+      <div>
+        <label for="role">Rol en la plataforma</label>
+        <select id="role" aria-current="true">
+          <option value="user">Usuario</option>
+          <option value="admin" aria-selected="true">Administrador</option>
+        </select>
+      </div>
+
+      <!-- Casilla de verificación -->
+      <div>
+        <label>
+          <input type="checkbox" id="terms" aria-required="true" aria-checked="false">
+          Acepto los términos y condiciones
+        </label>
+      </div>
+
+      <!-- Estado de carga -->
+      <div id="loading" aria-busy="false">
+        Procesando solicitud...
+      </div>
+
+      <!-- Botón de envío -->
+      <button type="submit" id="submitButton" aria-controls="loading">Enviar</button>
+    </form>
+  </main>
+  <footer>
+    <p>&copy; 2025 Mi Sitio Web</p>
+  </footer>
+</body>
+
+</html>

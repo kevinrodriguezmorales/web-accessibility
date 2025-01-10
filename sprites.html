@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sprites</title>
+  <style>
+    .icon {
+      --size: 75px;
+      width: var(--size);
+      height: var(--size);
+      background-image: url('assets/images/sprite.png');
+      background-repeat: no-repeat;
+      display: inline-block;
+    }
+    .icon.icon1 {
+      background-position: 0 0;
+    }
+    .icon.icon2 {
+      background-position: calc(var(--size) - (var(--size)*2)) 0;
+    }
+    .icon.icon3 {
+      background-position: calc(var(--size) - (var(--size)*3)) 0;
+    }
+    .icon.icon4 {
+      background-position: calc(var(--size) - (var(--size)*4)) 0;
+    }
+    .icon.icon5 {
+      background-position: calc(var(--size) - (var(--size)*5)) 0;
+    }
+    .icon.icon6 {
+      background-position: calc(var(--size) - (var(--size)*6)) 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="icon icon1"></div>
+  <div class="icon icon2"></div>
+  <div class="icon icon3"></div>
+  <div class="icon icon4"></div>
+  <div class="icon icon5"></div>
+  <div class="icon icon6"></div>
+</body>
+</html>
